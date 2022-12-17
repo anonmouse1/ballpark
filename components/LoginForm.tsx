@@ -4,7 +4,7 @@ import {
   FormHelperText,
   Input,
   Button,
-  Stack,
+  VStack,
   Flex,
   Box,
   useToast,
@@ -15,25 +15,8 @@ import {
 function LoginForm() {
   const toast = useToast();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Perform login logic here
-    toast({
-      title: "Logged in successfully.",
-      status: "success",
-      duration: 9000,
-      isClosable: true,
-    });
-  };
-
   return (
-    <Stack
-      as="form"
-      onSubmit={handleSubmit}
-      color={"orange"}
-      justifyContent="center"
-      bg="gray.800"
-    >
+    <VStack as="form" justifyContent="center" bg="gray.200">
       <FormControl>
         <FormLabel htmlFor="email">Email address</FormLabel>
         <Input id="email" type="email" placeholder="Enter your email address" />
@@ -45,17 +28,17 @@ function LoginForm() {
           type="password"
           placeholder="Enter your password"
         />
+      </FormControl>
+      <Flex mt={4} justifyContent="center" alignItems="center">
+        <Button type="submit">Log in</Button>
+      </Flex>
+      <FormControl>
         <Link>Forgot password</Link>
-        <Button variant="outline" variantColor="teal" onClick={console.log}>
+        <Button variant="outline" onClick={console.log}>
           Sign up
         </Button>
       </FormControl>
-      <Flex mt={4} justifyContent="center" alignItems="center">
-        <Button variantColor="teal" type="submit">
-          Log in
-        </Button>
-      </Flex>
-    </Stack>
+    </VStack>
   );
 }
 export default LoginForm;
