@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>Welcome to Ballpark !</h1>
         <div>
           <Image
-            src="/baseballOnCard.png"
+            src="/baseballonCard.png"
             alt="baseball"
             width={200}
             height={200}
