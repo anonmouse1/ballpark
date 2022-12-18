@@ -74,8 +74,6 @@ function LoginForm() {
           </GridItem>
         </HStack>
       </SimpleGrid>
-
-      <Flex mt={4} justifyContent="center" alignItems="center"></Flex>
     </VStack>
   );
 }
